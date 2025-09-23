@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
     position: "absolute",
     zIndex: 1,
     backgroundColor: "burlywood",
-    marginTop: "30%",
+    marginTop: "55%",
     marginLeft: "55%",
     borderRadius: 50,
   },

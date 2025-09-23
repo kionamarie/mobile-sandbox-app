@@ -1,17 +1,23 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, Image } from "react-native";
 import React from "react";
 import { Link } from "expo-router";
+import background from "../assets/images/background.jpg";
 
 const fifth = () => {
   return (
     <View style={styles.container}>
+      <Link href={"/sixth"} style={styles.link}>
+        6
+      </Link>
       <View style={styles.container2}>
         <View style={styles.topPanel} />
 
         <View style={styles.grid}>
           <View style={styles.leftColumn}>
             <View style={styles.panel} />
-            <View style={styles.panel} />
+            <View style={styles.panel}>
+              <Image style={styles.image} source={background} />{" "}
+            </View>
             <View style={styles.short_panel} />
           </View>
           <View style={styles.rightColumn}>
@@ -86,5 +92,9 @@ const styles = StyleSheet.create({
     height: 80,
     borderRadius: 50,
     backgroundColor: "gold",
+  },
+  image: {
+    height: "100%",
+    width: "100%",
   },
 });

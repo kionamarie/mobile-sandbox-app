@@ -5,8 +5,8 @@ import { Link } from "expo-router";
 const index = () => {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Practice Layouts</Text>
-      <View style={styles.container2}>
+      <Text style={styles.title}>Layout Practice</Text>
+      <View style={styles.linkList}>
         <Link href={"/second"} style={styles.link}>
           Screen 2
         </Link>
@@ -22,6 +22,12 @@ const index = () => {
         <Link href={"/sixth"} style={styles.link}>
           Screen 6
         </Link>
+        <Link href={"/seventh"} style={styles.link}>
+         Screen 7
+        </Link>
+        <Link href={"/eighth"} style={styles.link}>
+         Screen 8
+        </Link>
       </View>
     </View>
   );
@@ -34,23 +40,22 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
-    margin: "10%",
-  },
-  container2: {
-    flex: 1,
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "center",
+    padding: "10%",
   },
   title: {
-    fontSize: 25,
+    fontSize: 28,
     fontFamily: "Courier",
     fontWeight: "bold",
     color: "darkgoldenrod",
+    marginBottom: 32,
+  },
+  linkList: {
+    alignItems: "center",
+    justifyContent: "center",
   },
   link: {
-    fontSize: 24,
+    fontSize: 22,
     color: "darkkhaki",
-    margin: 30,
+    marginVertical: 12,
   },
 });
