@@ -5,28 +5,34 @@ import { Link } from "expo-router";
 const index = () => {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Layout Practice</Text>
+      <Text style={styles.title}>Mobile Dev Practice</Text>
       <View style={styles.linkList}>
         <Link href={"/second"} style={styles.link}>
-          Screen 2
+          2
         </Link>
         <Link href={"/third"} style={styles.link}>
-          Screen 3
+          3
         </Link>
         <Link href={"/fourth"} style={styles.link}>
-          Screen 4
+          4
         </Link>
         <Link href={"/fifth"} style={styles.link}>
-          Screen 5
+          5
         </Link>
         <Link href={"/sixth"} style={styles.link}>
-          Screen 6
+          6
         </Link>
         <Link href={"/seventh"} style={styles.link}>
-         Screen 7
+        7
         </Link>
         <Link href={"/eighth"} style={styles.link}>
-         Screen 8
+        8
+        </Link>
+        <Link href={"/ninth"} style={styles.link}>
+        9
+        </Link>
+        <Link href={"/colorbox"} style={styles.link}>
+        10 (ColorBox)
         </Link>
       </View>
     </View>

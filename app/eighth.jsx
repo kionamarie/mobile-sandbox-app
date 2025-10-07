@@ -1,7 +1,8 @@
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
+import { StyleSheet, Text, TextInput, View, TouchableOpacity } from 'react-native'
 import {useEffect, useState} from 'react'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import Slider from "@react-native-community/slider";
 
 
 // App to count how many times user presses a button
@@ -9,14 +10,19 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 const eighth = () => {
   const [count, setCount] = useState(0);
   const [countdown, setCountdown] = useState(false);
+  const [limit, setLimit] = useState('');
 
   const updateCount = (newCount) => {
-    setCount(newCount)
-    if (newCount === 10) {
+    setCount(newCount);
+    if (newCount === limit) {
         setCountdown(true);
-    } else if (newCount === 0) {
+    } else {
         setCountdown(false);
     }
+  };
+
+  const updateLimit = (newLimit) => {
+    setLimit(newLimit);
   };
 
   // Load count from Async storage
@@ -67,14 +73,25 @@ const eighth = () => {
   return (
     <View style={styles.container}>
         <Text style={styles.title}>Counter App</Text>
+        <Text style={styles.subtitle}>Move the slider to set a limit </Text>
+        <Text>{limit}</Text>
+        <Slider
+            style={styles.slider}
+            minimumValue={0}
+            maximumValue={100}
+            step={1}
+            value={limit}
+            onValueChange={updateLimit}
+        />
+
         <Text style={styles.subtitle}>(Press the smile icon to increase count)</Text>
       <Text style={styles.counter}>Counter: {count}</Text>
       {!countdown && (
-      <TouchableOpacity onPress={() => updateCount((count + 1)% 11)}>
+      <TouchableOpacity onPress={() => updateCount((count + 1)% limit)}>
         <Icon name="emoticon-happy-outline" size={80} color="goldenrod" />
       </TouchableOpacity>)}
       {countdown && (     
-        <TouchableOpacity onPress={() => updateCount((count - 1)% 11)}>
+        <TouchableOpacity onPress={() => updateCount((count - 1)% limit)}>
         <Icon name="emoticon-sad-outline" size={80} color="goldenrod" />
       </TouchableOpacity>)}
       <TouchableOpacity onPress={() => updateCount(0)} style={{ marginTop: 75 }}>
@@ -122,4 +139,8 @@ const styles = StyleSheet.create({
         fontWeight: "bold",
         textDecorationLine: "underline",
     },  
+    slider: {
+        width: 300,
+        height: 40  
+    },
 })
