@@ -34,6 +34,9 @@ const index = () => {
         <Link href={"/colorbox"} style={styles.link}>
         10 (ColorBox)
         </Link>
+        <Link href={"/hiddenTiles"} style={styles.link}>
+        11 (Hidden Tiles)
+        </Link>
       </View>
     </View>
   );

@@ -1,6 +1,10 @@
-import { StyleSheet, Switch, Text, TextInput, TouchableOpacity, View } from 'react-native'
+import { StyleSheet, Switch, Image, TextInput, useColorScheme, View } from 'react-native'
 import {useState} from 'react'
 import Slider from '@react-native-community/slider';
+import ThemedView from '../components/ThemedView'
+import ThemedText from '../components/ThemedText';
+import ThemedLogo from "../components/ThemedLogo";
+
 
 const colorbox = () => {
     const [red, setRed] = useState('0');
@@ -24,8 +28,8 @@ const colorbox = () => {
     }
     
     return (
-    <View style={styles.container}>
-
+    <ThemedView style={styles.container}>
+        <ThemedLogo style={styles.image} />
         <View>
         { !switchValue && 
         <View style={styles.textBox}>
@@ -41,7 +45,7 @@ const colorbox = () => {
         { switchValue && 
         <View style={styles.textBox}>
         <TextInput
-            style={[styles.textInput, { backgroundColor: getRGBColor()}]}
+            style={[styles.textInput, { backgroundColor: getRGBColor() }]}
             multiline={true}
             value={text}
             onChangeText={setText}
@@ -51,7 +55,7 @@ const colorbox = () => {
 }
         </View>
         <View>
-            <Text style={styles.sliderText}>R: {red}%</Text>
+            <ThemedText style={styles.sliderText}>R: {red}%</ThemedText>
             <Slider
                 style={styles.slider}
                 minimumValue={0}
@@ -60,7 +64,7 @@ const colorbox = () => {
                 value={red}
                 onValueChange={setRed}
             />
-            <Text style={styles.sliderText}>G: {green}%</Text>
+            <ThemedText style={styles.sliderText}>G: {green}%</ThemedText>
             <Slider
                 style={styles.slider}
                 minimumValue={0}
@@ -69,7 +73,7 @@ const colorbox = () => {
                 value={green}
                 onValueChange={setGreen}
             />
-            <Text style={styles.sliderText}>B: {blue}%</Text>
+            <ThemedText style={styles.sliderText}>B: {blue}%</ThemedText>
             <Slider
                 style={styles.slider}
                 minimumValue={0}
@@ -84,7 +88,7 @@ const colorbox = () => {
                 onValueChange={toggleSwitch}
             />
         </View>
-    </View>
+    </ThemedView>
     )
 }
 
@@ -97,7 +101,6 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         padding: '10%', 
-        backgroundColor: 'floralwhite',
     },
     textBox: {
         alignItems: 'center',
@@ -108,7 +111,7 @@ const styles = StyleSheet.create({
         flexWrap: 'wrap',
     },
     textInput: {
-        height: 250,
+        height: 225,
         width: 250,
         fontSize: 20,
         backgroundColor: 'white',
@@ -132,5 +135,10 @@ const styles = StyleSheet.create({
     },
     switch: {
         marginLeft: 75,
-    }
+    },
+    image: {
+        width: '100%',
+        height: 150,
+        marginBottom: 5,
+    }, 
 })

@@ -2,6 +2,7 @@ import { StyleSheet, Text, View, Image } from "react-native";
 import React from "react";
 import { Link } from "expo-router";
 import background from "../assets/images/background.jpg";
+import ThemedLogo from "../components/ThemedLogo";
 
 const fifth = () => {
   return (
@@ -16,7 +17,7 @@ const fifth = () => {
           <View style={styles.leftColumn}>
             <View style={styles.panel} />
             <View style={styles.panel}>
-              <Image style={styles.image} source={background} />{" "}
+              <ThemedLogo style={styles.image} source={background} />{" "}
             </View>
             <View style={styles.short_panel} />
           </View>
