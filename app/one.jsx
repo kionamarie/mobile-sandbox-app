@@ -1,13 +1,14 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { Link } from "expo-router";
+import ThemedView from "../components/ThemedView";
 
 const second = () => {
   return (
-    <View style={styles.container}>
+    <ThemedView style={styles.container}>
       <View style={styles.box}></View>
       <View style={styles.circle}></View>
-    </View>
+    </ThemedView>
   );
 };
 
@@ -18,7 +19,6 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "darkkhaki",
   },
   box: {
     width: "90%",

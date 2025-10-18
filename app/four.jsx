@@ -3,10 +3,11 @@ import React from "react";
 import { Link } from "expo-router";
 import background from "../assets/images/background.jpg";
 import ThemedLogo from "../components/ThemedLogo";
+import ThemedView from "../components/ThemedView";
 
 const four = () => {
   return (
-    <View style={styles.container}>
+    <ThemedView style={styles.container}>
       <View style={styles.container2}>
         <View style={styles.topPanel} />
 
@@ -27,7 +28,7 @@ const four = () => {
           </View>
         </View>
       </View>
-    </View>
+    </ThemedView>
   );
 };
 
@@ -36,7 +37,6 @@ export default four;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "darkolivegreen",
     alignItems: "center",
     justifyContent: "center",
   },
