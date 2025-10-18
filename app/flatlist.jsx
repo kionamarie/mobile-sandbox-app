@@ -1,29 +1,30 @@
 import { StyleSheet, Text, View, FlatList, Image } from "react-native";
 import { posts } from "../data/user_posts";
 import background from "../assets/images/background.jpg";
+import ThemedView from "../components/ThemedView";
 
 
 const sixth = () => {
   const renderItem = ({ item }) => (
-    <View style={styles.postContainer}>
+    <ThemedView style={styles.postContainer}>
       <Image style={styles.image} source={{ uri: item.image }} />
-      <View style={styles.overlay}>
+      <ThemedView style={styles.overlay}>
         <Text style={styles.username}>{item.username}</Text>
       <Text style={styles.content}>{item.content}</Text>
-      </View>
+      </ThemedView>
       <Text style={styles.date}>{item.date}</Text>
-    </View>
+    </ThemedView>
   );
 // use local pictures for each user post, ex: item.image
   return (
-    <View style={styles.container}>
+    <ThemedView style={styles.container}>
       <FlatList
         data={posts}
         keyExtractor={(post) => post.id.toString()}
         renderItem={renderItem}
         contentContainerStyle={styles.listContent}
       />
-    </View>
+    </ThemedView>
   );
 };
 
@@ -33,7 +34,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 16,
-    backgroundColor: "darkolivegreen",
   },
   listContent: {},
   postContainer: {
@@ -41,7 +41,6 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     borderRadius: 12,
     overflow: "hidden",
-    backgroundColor: "floralwhite",
     position: "relative",
   },
   image: {

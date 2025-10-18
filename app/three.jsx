@@ -2,12 +2,9 @@ import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { Link } from "expo-router";
 
-const fourth = () => {
+const three = () => {
   return (
     <View style={styles.container}>
-      <Link href={"/fifth"} style={styles.link}>
-        5
-      </Link>
       <View style={styles.circle}></View>
       <View style={styles.box}></View>
       <View style={styles.container2}>
@@ -27,7 +24,7 @@ const fourth = () => {
   );
 };
 
-export default fourth;
+export default three;
 
 const styles = StyleSheet.create({
   container: {

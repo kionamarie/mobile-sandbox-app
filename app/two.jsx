@@ -2,19 +2,19 @@ import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { Link } from "expo-router";
 
-const second = () => {
+const two = () => {
   return (
     <View style={styles.container}>
-      <Link href={"/third"} style={styles.link}>
-        3
-      </Link>
+      <View style={styles.box}></View>
+      <View style={styles.box}></View>
+      <View style={styles.box}></View>
       <View style={styles.box}></View>
       <View style={styles.circle}></View>
     </View>
   );
 };
 
-export default second;
+export default two;
 
 const styles = StyleSheet.create({
   container: {
@@ -25,9 +25,9 @@ const styles = StyleSheet.create({
   },
   box: {
     width: "90%",
-    flex: 5,
+    flex: 2,
     backgroundColor: "darkolivegreen",
-    margin: 30,
+    margin: 15,
   },
   container2: {
     alignItems: "bottom",
@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
     position: "absolute",
     zIndex: 1,
     backgroundColor: "burlywood",
-    marginTop: "70%",
+    marginTop: "55%",
     marginLeft: "55%",
     borderRadius: 50,
   },

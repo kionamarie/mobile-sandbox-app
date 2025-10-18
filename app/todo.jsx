@@ -2,6 +2,8 @@ import { FlatList, StyleSheet, Text, TextInput, Touchable, TouchableOpacity, Vie
 import {useEffect, useState} from 'react'
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import ThemedView from '../components/ThemedView';
+import ThemedText from '../components/ThemedText';
 
 
 const seventh = () => {
@@ -74,7 +76,7 @@ const seventh = () => {
     }))};
 
     const renderItem = ({ item }) => (
-    <View style={styles.todoCard}>
+    <ThemedView style={styles.todoCard}>
       <TouchableOpacity onPress={() => togglePriority(item.id)} style={{ marginRight: 12 }}>
         <Icon
           name={item.priority ? 'star' : 'star-outline'}
@@ -83,19 +85,19 @@ const seventh = () => {
         />
       </TouchableOpacity>
         <TouchableOpacity onPress={() => toggleTaskStatus(item.id)} style={{ flex: 1 }}>
-        <Text style={[styles.todoText, item.status === 'completed' && styles.completed]}>
+        <ThemedText style={[styles.todoText, item.status === 'completed' && styles.completed]}>
             {item.name}
-        </Text>
+        </ThemedText>
         </TouchableOpacity>
         <TouchableOpacity style={styles.removeButton} onPress={() => removeTask(item.id)}>
         <Text style={styles.removeButtonText}>✕</Text>
         </TouchableOpacity>
-    </View>
+    </ThemedView>
     );
 
   return (
-  <View style={styles.container}>
-    <Text style={styles.title}>To-Do List</Text>
+  <ThemedView style={styles.container}>
+    <ThemedText title={true} style={styles.title}>To-Do List</ThemedText>
     <View style={styles.inputRow}>
       <TextInput
         style={styles.input}
@@ -115,7 +117,7 @@ const seventh = () => {
       contentContainerStyle={styles.listContent}
       style={{ width: "100%" }}
     />
-  </View>
+  </ThemedView>
 );
 }
 
@@ -124,7 +126,6 @@ export default seventh;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#f5f5f5",
     alignItems: "center",
     justifyContent: "center",
     padding: 24,
@@ -132,7 +133,6 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 28,
     fontWeight: "bold",
-    color: "darkolivegreen",
     marginBottom: 24,
   },
   inputRow: {

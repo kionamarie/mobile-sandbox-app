@@ -1,44 +1,63 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { Link } from "expo-router";
+import ThemedView from "../components/ThemedView";
+import ThemedText from "../components/ThemedText";
+import { useTheme } from "../context/ThemeContext";
 
 const index = () => {
+  const { theme } = useTheme();
+  const headingColor = theme.colors.title;
+  const linkColor = theme.colors.text;
+
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Mobile Dev Practice</Text>
-      <View style={styles.linkList}>
-        <Link href={"/second"} style={styles.link}>
-          2
+    <ThemedView style={styles.container}>
+      <ThemedText title={true} style={styles.title}>Sandbox</ThemedText>
+
+      <View style={styles.sectionContainer}>
+         <Text style={[styles.sectionTitle, { color: headingColor }]}>Layout Practice</Text>
+        <View style={styles.sectionLinks}>
+          <View style={styles.linkItem}>
+            <Link href={"/one"} style={[styles.link, { color: linkColor }]}>1</Link>
+          </View>
+          <View style={styles.linkItem}>
+            <Link href={"/two"} style={[styles.link, { color: linkColor }]}>2</Link>
+          </View>
+          <View style={styles.linkItem}>
+            <Link href={"/three"} style={[styles.link, { color: linkColor }]}>3</Link>
+          </View>
+          <View style={styles.linkItem}>
+            <Link href={"/four"} style={[styles.link, { color: linkColor }]}>4</Link>
+          </View>
+        </View>
+        </View>
+
+      <View style={styles.sectionContainer}>
+        <Text style={[styles.sectionTitle, { color: headingColor }]}>Component Practice</Text>
+        <Link href={"/flatlist"} style={[styles.link, { color: linkColor }]}>
+          FlatList
         </Link>
-        <Link href={"/third"} style={styles.link}>
-          3
+        <Link href={"/todo"} style={[styles.link, { color: linkColor }]}>
+          To Do List
         </Link>
-        <Link href={"/fourth"} style={styles.link}>
-          4
+        <Link href={"/counter"} style={[styles.link, { color: linkColor }]}>
+          Counter
         </Link>
-        <Link href={"/fifth"} style={styles.link}>
-          5
+        <Link href={"/tipcalc"} style={[styles.link, { color: linkColor }]}>
+          Tip Calculator
         </Link>
-        <Link href={"/sixth"} style={styles.link}>
-          6
+        <Link href={"/colorbox"} style={[styles.link, { color: linkColor }]}>
+          ColorBox
         </Link>
-        <Link href={"/seventh"} style={styles.link}>
-        7
-        </Link>
-        <Link href={"/eighth"} style={styles.link}>
-        8
-        </Link>
-        <Link href={"/ninth"} style={styles.link}>
-        9
-        </Link>
-        <Link href={"/colorbox"} style={styles.link}>
-        10 (ColorBox)
-        </Link>
-        <Link href={"/hiddenTiles"} style={styles.link}>
-        11 (Hidden Tiles)
+        <Link href={"/hiddenTiles"} style={[styles.link, { color: linkColor }]}>
+          Hidden Tiles
         </Link>
       </View>
-    </View>
+
+      <View style={ styles.sectionContainer }>
+          <Link href={"/settings"} style={[styles.link, { color: linkColor }]}>Settings</Link> 
+      </View>
+    </ThemedView>
   );
 };
 
@@ -52,19 +71,44 @@ const styles = StyleSheet.create({
     padding: "10%",
   },
   title: {
-    fontSize: 28,
+    fontSize: 50,
     fontFamily: "Courier",
     fontWeight: "bold",
-    color: "darkgoldenrod",
     marginBottom: 32,
   },
-  linkList: {
+sectionContainer: {
+    width: "100%",
+    maxWidth: 640,
+    borderWidth: 1,
+    borderColor: "grey",
+    borderRadius: 12,
+    padding: 16,
+    marginBottom: 18,
     alignItems: "center",
-    justifyContent: "center",
+  },
+  sectionLinks: {
+    width: "100%",
+    flexDirection: "row",
+    flexWrap: "wrap",
+    justifyContent: "space-between", 
+  },
+  linkItem: {
+    width: "48%",            
+    paddingVertical: 8,
+    alignItems: "center",
   },
   link: {
     fontSize: 22,
-    color: "darkkhaki",
-    marginVertical: 12,
+    textAlign: "center",
+    paddingVertical: 10,
+    paddingHorizontal: 12,
+    borderRadius: 8,
+  },
+  sectionTitle: {
+    fontSize: 20,
+    fontFamily: "Courier",
+    fontWeight: "bold",
+    marginBottom: 16,
+    textDecorationLine: "underline",
   },
 });

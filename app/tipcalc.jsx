@@ -1,6 +1,8 @@
 import { StyleSheet, Text, View, TextInput, Button} from 'react-native'
 import {useState} from 'react'
 import Slider from "@react-native-community/slider";
+import ThemedText from '../components/ThemedText';
+import ThemedView from '../components/ThemedView';
 
 
 // Tip Calculator App
@@ -41,9 +43,9 @@ const updateSplit = (value) => {
 };
 
   return (
-    <View>
-      <Text style={styles.title}>Tip Calculator</Text>
-      <Text style={styles.subtitle}>Let's calculate how much to tip for your meal</Text>
+    <ThemedView style={styles.container}>
+      <ThemedText title={true} style={styles.title}>Tip Calculator</ThemedText>
+      <ThemedText style={styles.subtitle}>Let's calculate how much to tip for your meal</ThemedText>
       <TextInput 
         style={styles.input}
         placeholder='Bill Total'
@@ -66,10 +68,6 @@ const updateSplit = (value) => {
         value={split}
         onChangeText={updateSplit}
         />
-      {/* <Button 
-        title='Calculate'
-        onPress={calculateTip}
-      /> */}
     {result && (
       <View style={styles.resultContainer}>
         {typeof result === 'string' ? (
@@ -83,7 +81,7 @@ const updateSplit = (value) => {
         )}
       </View>
     )};
-    </View>
+    </ThemedView>
   )
 }
 
@@ -91,10 +89,10 @@ export default ninth
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
-        padding: '10%',
+        padding: 25,
+        height: '100%',
     },
     title: {
         fontSize: 24,

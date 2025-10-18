@@ -4,12 +4,9 @@ import { Link } from "expo-router";
 import background from "../assets/images/background.jpg";
 import ThemedLogo from "../components/ThemedLogo";
 
-const fifth = () => {
+const four = () => {
   return (
     <View style={styles.container}>
-      <Link href={"/sixth"} style={styles.link}>
-        6
-      </Link>
       <View style={styles.container2}>
         <View style={styles.topPanel} />
 
@@ -34,7 +31,7 @@ const fifth = () => {
   );
 };
 
-export default fifth;
+export default four;
 
 const styles = StyleSheet.create({
   container: {

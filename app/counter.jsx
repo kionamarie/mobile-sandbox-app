@@ -1,11 +1,20 @@
-import { StyleSheet, Text, TextInput, View, TouchableOpacity } from 'react-native'
+import { StyleSheet, Text, TextInput, View, TouchableOpacity, Alert } from 'react-native'
 import {useEffect, useState} from 'react'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import Slider from "@react-native-community/slider";
+import ThemedView from '../components/ThemedView';
 
 
 // App to count how many times user presses a button
+const showAlert = () => 
+    Alert.alert(
+        'Limit Reached', 'You have reached the limit.',
+        [
+            {text: 'OK'},
+        ],
+        { cancelable: true, }
+    );
 
 const eighth = () => {
   const [count, setCount] = useState(0);
@@ -16,6 +25,13 @@ const eighth = () => {
     setCount(newCount);
     if (newCount === limit) {
         setCountdown(true);
+        Alert.alert(
+        'Limit Reached', 'You have reached the limit.',
+        [
+            {text: 'OK'},
+        ],
+        { cancelable: true, }
+    );
     } else {
         setCountdown(false);
     }
@@ -71,7 +87,7 @@ const eighth = () => {
   }, [count]);
 
   return (
-    <View style={styles.container}>
+    <ThemedView style={styles.container}>
         <Text style={styles.title}>Counter App</Text>
         <Text style={styles.subtitle}>Move the slider to set a limit </Text>
         <Text>{limit}</Text>
@@ -94,10 +110,10 @@ const eighth = () => {
         <TouchableOpacity onPress={() => updateCount((count - 1)% limit)}>
         <Icon name="emoticon-sad-outline" size={80} color="goldenrod" />
       </TouchableOpacity>)}
-      <TouchableOpacity onPress={() => updateCount(0)} style={{ marginTop: 75 }}>
+      <TouchableOpacity onPress={() => setCount(0)} style={{ marginTop: 75 }}>
         <Text style={styles.resetText}> Reset </Text>
       </TouchableOpacity>
-    </View>
+    </ThemedView>
   )
 }
 
@@ -106,7 +122,6 @@ export default eighth
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: "#f5f5f5",
         alignItems: "center",
         justifyContent: "center",
         padding: 24,
