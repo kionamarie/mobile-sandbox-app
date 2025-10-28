@@ -2,6 +2,7 @@ import { View, Text, useColorScheme } from 'react-native'
 import { Colors } from "../constants/colors";
 import { useTheme } from '../context/ThemeContext';
 
+
 const ThemedView = ({style, ...props}) => {
   // Use the global theme state
     const { theme } = useTheme();

@@ -1,8 +1,8 @@
 import { StyleSheet, Text, View, TextInput, Button} from 'react-native'
 import {useState} from 'react'
 import Slider from "@react-native-community/slider";
-import ThemedText from '../components/ThemedText';
-import ThemedView from '../components/ThemedView';
+import ThemedText from '../../components/ThemedText';
+import ThemedView from '../../components/ThemedView';
 
 
 // Tip Calculator App

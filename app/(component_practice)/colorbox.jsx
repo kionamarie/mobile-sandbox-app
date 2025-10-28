@@ -1,9 +1,9 @@
 import { StyleSheet, Switch, Image, TextInput, useColorScheme, View } from 'react-native'
 import {useState} from 'react'
 import Slider from '@react-native-community/slider';
-import ThemedView from '../components/ThemedView'
-import ThemedText from '../components/ThemedText';
-import ThemedLogo from "../components/ThemedLogo";
+import ThemedText from '../../components/ThemedText';
+import ThemedLogo from "../../components/ThemedLogo";
+import ThemedView from '../../components/ThemedView';
 
 
 const colorbox = () => {

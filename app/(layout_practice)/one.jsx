@@ -1,21 +1,18 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { Link } from "expo-router";
-import ThemedView from "../components/ThemedView";
+import ThemedView from "../../components/ThemedView";
 
-const two = () => {
+const second = () => {
   return (
     <ThemedView style={styles.container}>
-      <View style={styles.box}></View>
-      <View style={styles.box}></View>
-      <View style={styles.box}></View>
       <View style={styles.box}></View>
       <View style={styles.circle}></View>
     </ThemedView>
   );
 };
 
-export default two;
+export default second;
 
 const styles = StyleSheet.create({
   container: {
@@ -25,9 +22,9 @@ const styles = StyleSheet.create({
   },
   box: {
     width: "90%",
-    flex: 2,
+    flex: 5,
     backgroundColor: "darkolivegreen",
-    margin: 15,
+    margin: 30,
   },
   container2: {
     alignItems: "bottom",
@@ -39,7 +36,7 @@ const styles = StyleSheet.create({
     position: "absolute",
     zIndex: 1,
     backgroundColor: "burlywood",
-    marginTop: "55%",
+    marginTop: "70%",
     marginLeft: "55%",
     borderRadius: 50,
   },

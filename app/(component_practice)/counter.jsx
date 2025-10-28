@@ -3,7 +3,7 @@ import {useEffect, useState} from 'react'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import Slider from "@react-native-community/slider";
-import ThemedView from '../components/ThemedView';
+import ThemedView from '../../components/ThemedView';
 
 
 // App to count how many times user presses a button

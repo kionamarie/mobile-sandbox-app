@@ -1,9 +1,9 @@
 import { StyleSheet, Text, View, Image } from "react-native";
 import React from "react";
 import { Link } from "expo-router";
-import background from "../assets/images/background.jpg";
-import ThemedLogo from "../components/ThemedLogo";
-import ThemedView from "../components/ThemedView";
+import background from "../../assets/images/background.jpg";
+import ThemedLogo from "../../components/ThemedLogo";
+import ThemedView from "../../components/ThemedView";
 
 const four = () => {
   return (

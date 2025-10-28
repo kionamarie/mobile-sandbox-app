@@ -1,7 +1,6 @@
 import { StyleSheet, Text, View, FlatList, Image } from "react-native";
-import { posts } from "../data/user_posts";
-import background from "../assets/images/background.jpg";
-import ThemedView from "../components/ThemedView";
+import { posts } from "../../data/user_posts";
+import ThemedView from "../../components/ThemedView";
 
 
 const sixth = () => {

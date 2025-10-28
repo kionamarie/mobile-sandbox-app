@@ -2,8 +2,8 @@ import { FlatList, StyleSheet, Text, TextInput, Touchable, TouchableOpacity, Vie
 import {useEffect, useState} from 'react'
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import ThemedView from '../components/ThemedView';
-import ThemedText from '../components/ThemedText';
+import ThemedView from '../../../components/ThemedView';
+import ThemedText from '../../../components/ThemedText';
 
 
 const seventh = () => {
